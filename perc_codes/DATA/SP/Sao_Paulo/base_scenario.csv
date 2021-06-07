@@ -1,0 +1,30 @@
+Intervention,Start.date,End.date,Value1,Value2
+Self Isolation,2020-03-24,2021-12-31,0.70,0.80
+Social Distancing,2020-03-18,2020-05-31,0.65,0.95
+Handwashing,2020-03-19,2020-05-31,1.00,0.14
+School Closing,2020-03-21,2021-12-31,1.00,0.95
+Work From Home,2020-03-16,2020-05-31,0.60,0.95
+Vaccination,2021-01-01,2021-12-31,0.00,0.00
+Travel Ban,2020-02-19,2020-03-18,0.20,0.00
+Travel Ban,2020-03-19,2021-12-31,0.20,0.70
+Cocoon Elderly,2020-03-14,2021-12-31,0.30,0.95
+Cocoon Age,2020-03-14,2021-12-31,60,0.00
+Screening,2022-01-01,2022-12-31,0.00,0.00
+Quarantine,2020-01-01,2022-12-31,0.00,0.00
+Quarantine Days,2020-01-01,2022-12-31,14,0.00
+Window Time,2020-01-01,2022-12-31,2,0.00
+""Plano Sao Paulo from 1 June"",NA,NA,NA,NA
+Social Distancing,2020-06-01,2020-06-30,0.59,0.95
+Handwashing,2020-06-01,2020-06-30,0.9,0.32
+Work From Home,2020-06-01,2020-06-30,0.48,0.95
+Social Distancing,2020-07-01,2020-10-08,0.52,0.95
+Handwashing,2020-07-01,2020-10-08,0.9,0.49
+Work From Home,2020-07-01,2020-10-08,0.36,0.95
+""School reopening"",NA,NA,NA,NA
+School Closing,2020-10-07,2020-12-17,1.00,0.8
+School Closing,2020-12-18,2021-01-31,1.00,0.95
+School Closing,2021-02-01,2021-12-31,1.00,0.5
+""Plano Sao Paulo GREEN from 9 October"",NA,NA,NA,NA
+Social Distancing,2020-10-09,2021-12-31,0.47,0.95
+Handwashing,2020-10-09,2021-12-31,0.9,0.44
+Work From Home,2020-10-09,2021-12-31,0.32,0.95

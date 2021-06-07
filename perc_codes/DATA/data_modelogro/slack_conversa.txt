@@ -1,0 +1,266 @@
+Diogo Melo  23h23
+ooopa
+
+
+
+
+
+23h23
+acho que terminei os tempos e probs que vcs precisam aqui
+23h23
+vejam se falta alguma
+23h24
+no geral os tempos quase não mudam entre idades, mas fiz estratificado assim mesmo
+23h24
+mas fiz de 10 em 10 anos
+23h25
+4 arquivos 
+afterUTI_times_covid_2020-04-06.csv
+CSVClique para abrir
+
+
+notUTI_stay_times_covid_2020-04-06.csv
+CSVClique para abrir
+
+
+sint_int_times_covid_2020-04-06.csv
+CSVClique para abrir
+
+
+UTI_stay_times_covid_2020-04-06.csv
+CSVClique para abrir
+
+
+23h25
+a unica coisa que faltaria é tempo entre internação e UTI, mas a enorme maioria é 0-1 dias
+23h29
+3 arquivos 
+prob_death_notUTI_covid_2020-04-06.csv
+CSVClique para abrir
+
+
+prob_death_UTI_covid_2020-04-06.csv
+CSVClique para abrir
+
+
+prob_UTI_covid_2020-04-06.csv
+CSVClique para abrir
+
+
+23h30
+as probabilidade vem direto de um modelo, os tempos são simulações de internações a partir de um modelo, por isso os formatos são meio diferentes
+
+Caroline Franco  0h07
+Opa! Agora que vi. Muitíssimo obrigada!
+0h07
+Vou dar uma olhada já já
+
+Renato  3h26
+opa, tô dando uma olhada nisso em detalhe só agora
+3h27
+isso é só confirmado covid né?
+3h27
+as probs de UTI e mortalidade pra crianças são bem altas né?
+3h28
+talvez seja um viés de que só crianças em estado grave são levadas, e com isso tenha uma taxa de hospitalização na pop geral pequena
+3h29
+se colocar isso como está bruto vai dar uma mortalidade de crianças muito maior do que a observada pq não ajustamos esse parâmetro com a mesma fonte
+
+Diogo Melo  11h58
+pois é, acho que na UTI entrou uma criança que morreu
+11h58
+são numeros pequenos mesmo, eu ja mandei um shrinkage, por isso que a estimativa não é 1
+11h58
+e por isso que os intervalos são tão gigantes
+11h59
+alias, vi no whatsapp the vc queria distribuições. essa tabela vem direto de um modelo binomial, pode só mandar um logit nela toda e vc tem distribuições normais dos parametro
+11h59
+s
+11h59
+a dos tempos não, mas de probs sim
+12h
+ai é só usar o estimate e o SD
+
+Renato  18h24
+então, ontem depois daquela conversa eu saquei que tava fazendo bobagem, mas nem continuei lá porque tava todo mundo cansado
+
+Diogo Melo  18h25
+hahahah
+18h25
+ok
+
+Renato  18h25
+o que entra no modelo é taxa média, não entra variação entre indivíduos
+
+Diogo Melo  18h25
+eu no caso tava dormindo
+18h25
+capotado
+
+Renato  18h25
+então o que a gente precisa pra incerteza nos parâmetros não é a variância entre pessoas
+18h25
+é, tô sabendo hahaha - comentei lá sobre nossos horários complementares
+18h26
+mas então - o que realmente entra na análise de sensibilidade dos parâmetros é a incerteza na estimativa da média, o que é muito diferente da largura da distribuição em si
+
+Diogo Melo  18h27
+então os de probabilidade estão ok
+18h27
+isso é incerteza do parametro da binomial mesmo
+
+Renato  18h27
+isso ficou bem claro pq o tempo entre sintoma e hospitalização deu uns 11 dias, com uma incerteza imensa - mas a média bate quase que exatamente com as estimativas de vários outros papers
+
+Diogo Melo  18h27
+os tempos que não, mas eu posso gerar rapidinho a tabela com os parâmetros da weibull que eu usei
+
+Renato  18h27
+aliás, 11 não, viajei, era outro número
+18h28
+então, mas agora não sei qual incerteza uso pras médias, na real acho que ela é bem pequena
+
+Diogo Melo  18h31
+hmmmmm, acho que sim, mas vc não quer usar os parametros da weibull que eu estimei? a incerteza deles é bem pequena mesmo
+:boca_de_zíper:
+1
+
+18h31
+ai vc tem uma distribuiçào de tempos de verdade
+
+Renato  18h31
+pode ser!
+18h32
+mas pra deixar claro: isso é a distribuição do tempo médio, não é a distribuição de tempos mesmo?
+
+Diogo Melo  18h32
+ah, não
+18h33
+é a distribuição de tempos
+
+Renato  18h33
+então, isso que eu concluí que não quero
+18h33
+tem como obter a incerteza dos parâmetros, e com isso ver a incerteza da média?
+
+Diogo Melo  18h33
+vc quer só saber o médio? é pq como a distribuição é estranha a média não significa muita coisa né
+
+Renato  18h33
+uma weibull não é tão estranha, vai, quer dizer...depende dos parâmetros
+18h34
+mas é śo um pouco assimétrica
+18h34
+tem distribuição lognormal que é bem pior
+
+Diogo Melo  18h34
+hahahahah sim... mas usa só a coluna de mediana e abraço então
+18h34
+não var fazer diferença nenhuma
+
+Renato  18h34
+e não tem jeito, não tem como incluir isso em modelo determinístico, é só taxa média - salva essas distribuições pra versão estocástica hahaha
+18h35
+tá, você quer dizer que a incerteza da mediana é bem pequena mesmo, como desconfiava?
+
+Diogo Melo  18h35
+vou conferir, mas acho que sim
+18h36
+fala um tempo ai que vc gosta pra eu dar uma olhada
+
+Renato  18h36
+tempo na uti
+18h36
+afterUTI...
+
+Diogo Melo  18h46
+     media         sd   faixas
+1 13.64267 0.08442792    0 a 9
+2 14.12793 0.09421099  10 a 19
+3 13.79786 0.09212004  20 a 29
+4 14.13239 0.09158210  30 a 39
+5 13.14306 0.08631633  40 a 49
+6 13.27227 0.06569062  50 a 59
+7 13.98105 0.09653871  60 a 69
+8 14.18462 0.08749942  70 a 79
+9 14.60019 0.10027846 80 a 100
+18h47
+isso é na UTI
+
+Renato  18h59
+ahh quer dizer, o erro da média é da ordem de 0.1
+
+Diogo Melo  18h59
+sim
+
+Renato  18h59
+é bom saber, acho que a essa altura isso é perfeitamente ignorável
+18h59
+mas também é bom saber que essas médias não são compatíveis entre si, então ajuda ter um modelo que distingue entre as idades
+19h
+BTW, devia ter falado antes, mas Roberto me deu acesso ao zoom dele, acho que consigo fazer reunião de mais de 40 min
+
+Renato  1h19
+opa, voltei a isto, pode me mandar as tabelas pros outros tempos também, e pras probabilidades? Se tiver um jeito simples posso extrair do que já tinha me mandado antes (é só tomar a mediana?)
+
+Diogo Melo  1h22
+pode só pegar a média, comparando acho que ficou bem parecido não?
+1h23
+12.7045139371862
+13.1218180702655
+12.8590729143166
+13.0718254519367
+12.4264935815155
+12.5568776112156
+13.0024324034138
+13.3400064309736
+13.5351893479645
+image.png 
+image.png
+
+
+1h23
+isso ai são as médianas dos tempos
+1h23
+de UTI
+1h24
+1 dia a menos que as médias?
+
+Renato  1h37
+é, é bem isso
+1h38
+acho que as médias são melhores, em termos conceituais
+1h39
+mas o que você me mandou foi tudo mediana né?
+
+Diogo Melo  1h39
+Sim
+
+Renato  1h49
+isso não tá estruturado por idade no modelo, vejo que não há uma grande necessidade tampouco
+1h49
+nenhum dos tempos está, só probabilidades de hospitalização e morte
+
+Diogo Melo  1h52
+agora vc me fala!!?!?!
+1h52
+hahahaha
+1h52
+to aqui ajustando priors há horas, nas minas escuras do survival models
+1h53
+(mentira, foi de boa, só copiei e colei)
+
+Renato  1h56
+eu achei que tivesse te falado que só as probs eram estruturadas
+1h56
+mal ae
+1h56
+embora a análise seja boa de qualquer maneira, assim ficamos mais confiantes na hipótese do modelo
+1h56
+não é tempo jogado fora, não
+
+Diogo Melo  1h57
+sim, eu já usava um modelo de tempos estruturado no nowcasting, foi só copiar, de boa
+
+Renato  1h57
+a prob de UTI não tava estruturado, e eu tava muito desconfiado de que isso não era bom, e não era mesmo

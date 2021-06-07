@@ -1,0 +1,17 @@
+ra_id;ra_desc;ra_desc_abrev;
+681;"Região Metropolitana de São Paulo";"RM São Paulo";
+682;"Região Administrativa de Registro";"Registro";
+683;"Região Administrativa de Santos";"Santos";
+684;"Região Administrativa de São José dos Campos";"São José dos Campos";
+685;"Região Administrativa de Sorocaba";"Sorocaba";
+686;"Região Administrativa de Campinas";"Campinas";
+687;"Região Administrativa de Ribeirão Preto";"Ribeirão Preto";
+688;"Região Administrativa de Bauru";"Bauru";
+689;"Região Administrativa de São José do Rio Preto";"São José do Rio Preto";
+690;"Região Administrativa de Araçatuba";"Araçatuba";
+691;"Região Administrativa de Presidente Prudente";"Presidente Prudente";
+692;"Região Administrativa de Marília";"Marília";
+693;"Região Administrativa Central";"Central";
+694;"Região Administrativa de Barretos";"Barretos";
+695;"Região Administrativa de Franca";"Franca";
+698;"Região Administrativa de Itapeva";"Itapeva";

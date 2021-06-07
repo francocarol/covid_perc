@@ -1,0 +1,118 @@
+param	value	distribution	param1	param2	description	X	X.1	X.2	X.3	X.4	X.5	X.6	X.7
+1	p	0.02	lnorm	-4	1	probabilty of infection given a contact (in %)	19	0.01512	0.01499541	0.02105399	0.024989	0.02105399	0.02024	0.02539
+2	rho	100	unif	70	130	relative infectiousness of incubation phase (%) min 0 max 100 step 0.5		NA	NA	NA	NA	NA	NA	NA
+3	omega	100			NA	average duration of immunity (years) min 0.5 max 100 step 0.5		NA	NA	NA	NA	NA	NA	NA
+4	gamma	5.1			NA	average incubation period (days) min 1 max 7 step 0.5		NA	NA	NA	NA	NA	NA	NA
+5	nui	10			NA	average duration of symptomatic infection period (days) min 1 max 7 step 0.5		NA	NA	NA	NA	NA	NA	NA
+6	report	0			NA	percentage of asymptomatic infections that are reported (%) min 0 max 100 step 1		NA	NA	NA	NA	NA	NA	NA
+7	ratem	7.4			NA	time to death for fatal infection (days) min 1 max 20 step 0.5		NA	NA	NA	NA	NA	NA	NA
+8	nus	11.5			NA	duration of non-fatal severe infection (days) min 1 max 20 step 0.5		NA	NA	NA	NA	NA	NA	NA
+9	rhos	10			NA	relative level of conatcts from severely ill patients (%) min 0 max 100 step 1		NA	NA	NA	NA	NA	NA	NA
+10	amp	0			NA	relative amplitude of seasonal forcing (%) min 0 max 100 step 1		NA	NA	NA	NA	NA	NA	NA
+11	phi	6			NA	month of peak in seasonal forcing		NA	NA	NA	NA	NA	NA	NA
+12	beds	7.38			NA	beds per 1000 population in SAO PAULO STATE (ICU + regular)		NA	NA	NA	NA	NA	NA	NA
+13	beds_available	3000	5031,712474	27847	NA	regular beds (leitos de internação) in SP city	88560	NA	NA	NA	NA	NA	NA	NA
+14	icu_beds_available	5000	3639,840909	7517	NA	ICU beds in SP city	8052	NA	NA	NA	NA	NA	NA	NA
+15	ICU_beds	671			NA	beds per 1000 population in SAO PAULO STATE (only ICU)		NA	NA	NA	NA	NA	NA	NA
+16	startdate	2020-02-19			NA		2020-02-01	NA	NA	NA	NA	NA	NA	NA
+17	shift_start	0	dunif	-10	10	how many days before or after start_date? (ignored in simple simulation)		NA	NA	NA	NA	NA	NA	NA
+18	stopdate	2020-12-31			NA			NA	NA	NA	NA	NA	NA	NA
+19	reporth	95			NA	percentage of all hospitalized infections that are reported (%) min 0 max 100 step 1		NA	NA	NA	NA	NA	NA	NA
+20	reportc	1			NA	percentage of all symptomatic infections that are reported (%) min 0 max 100 step 1		NA	NA	NA	NA	NA	NA	NA
+21	ratemHC	24			NA	time to death for hospital overload infection (days) min 1 max 20 step 0.5		NA	NA	NA	NA	NA	NA	NA
+22	ratemICU	24			NA	time to death for ICU patient (days) min 1 max 20 step 0.5		NA	NA	NA	NA	NA	NA	NA
+23	ratemICUC	24			NA	time to death for ICU overload patient (days) min 1 max 20 step 0.5		NA	NA	NA	NA	NA	NA	NA
+24	ratemVent	24			NA	time to death for Ventilated patient (days) min 1 max 20 step 0.5		NA	NA	NA	NA	NA	NA	NA
+25	ratemVentC	24			NA	time to death for ventilator overload patient (days) min 1 max 20 step 0.5		NA	NA	NA	NA	NA	NA	NA
+26	ventilators_available	4515			NA	maximum number of ventilators - numeric		NA	NA	NA	NA	NA	NA	NA
+27	give	65			NA	system capacity stressor		NA	NA	NA	NA	NA	NA	NA
+28	pdeath_h	61			NA	probability of dying when hospitalised		NA	NA	NA	NA	NA	NA	NA
+29	pdeath_hc	80			NA	probability of dying when denied hospitalisation		NA	NA	NA	NA	NA	NA	NA
+30	pdeath_icu	95			NA	probability of dying when admitted to ICU		NA	NA	NA	NA	NA	NA	NA
+31	pdeath_icuh	97			NA			NA	NA	NA	NA	NA	NA	NA
+32	pdeath_icuc	99			NA	probability of dying when admission to ICU denied		NA	NA	NA	NA	NA	NA	NA
+33	pdeath_vent	80			NA	probability of dying when ventilated		NA	NA	NA	NA	NA	NA	NA
+34	pdeath_ventc	95			NA	probability of dying when ventilator denied		NA	NA	NA	NA	NA	NA	NA
+35	nusc	11			NA	duration of non-fatal denied hospitalisation infection (days) min 1 max 20 step 0.5		NA	NA	NA	NA	NA	NA	NA
+36	nu_icu	10.6			NA	duration of non-fatal icu infection (days) min 1 max 20 step 0.5		NA	NA	NA	NA	NA	NA	NA
+37	nu_icuh	11			NA	duration of non-fatal denied icu infection hospitalized (days) min 1 max 20 step 0.5		NA	NA	NA	NA	NA	NA	NA
+38	nu_icuc	11			NA	duration of non-fatal denied icu infection denied hospitalization (days) min 1 max 20 step 0.5		NA	NA	NA	NA	NA	NA	NA
+39	nu_vent	25			NA	duration of non-fatal ventilated infection (days) min 1 max 20 step 0.5		NA	NA	NA	NA	NA	NA	NA
+40	nu_ventc	24			NA	duration of non-fatal denied ventilation infection (days) min 1 max 20 step 0.5		NA	NA	NA	NA	NA	NA	NA
+41	nu_venth	25			NA			NA	NA	NA	NA	NA	NA	NA
+42	nu_venticu	25			NA			NA	NA	NA	NA	NA	NA	NA
+43	pclin	20	unif	10	30	probability upon infection of developing clinical symptoms		NA	NA	NA	NA	NA	NA	NA
+44					NA	probability upon hospitalisation of requiring icu admission		NA	NA	NA	NA	NA	NA	NA
+45	prob_vent	75			NA	probability upon admission to the UCI of requiring a ventilator		NA	NA	NA	NA	NA	NA	NA
+46	scale_ihr	1	unif	0.5	1.5	scaling in the ihr vector		NA	NA	NA	NA	NA	NA	NA
+47	home_effective	1	unif	0.5	1.5	scaling in the home contact matrix		NA	NA	NA	NA	NA	NA	NA
+48	perc_threshold	0.55	unif	0.4	0.6		0.79935769	0.7110628	0.60903098	0.5123111	0.56	NA	NA	NA
+49	home_steep	5			NA			NA	NA	NA	NA	NA	NA	NA
+50					NA			NA	NA	NA	NA	NA	NA	NA
+51	w2h	0		"Default values"	NA			NA	NA	NA	NA	NA	NA	NA
+52	s2h	0			NA			NA	NA	NA	NA	NA	NA	NA
+53	quarantine_eff_home	0			NA			NA	NA	NA	NA	NA	NA	NA
+54	quarantine_eff_other	0			NA			NA	NA	NA	NA	NA	NA	NA
+55	household_size	3.3			NA			NA	NA	NA	NA	NA	NA	NA
+56					NA			NA	NA	NA	NA	NA	NA	NA
+57	work_cov	0			NA			NA	NA	NA	NA	NA	NA	NA
+58	cocoon_eff	0			NA			NA	NA	NA	NA	NA	NA	NA
+59	work_eff	0			NA			NA	NA	NA	NA	NA	NA	NA
+60	school_eff	0			NA			NA	NA	NA	NA	NA	NA	NA
+61	school_cov	0			NA			NA	NA	NA	NA	NA	NA	NA
+62	dist_cov	0			NA			NA	NA	NA	NA	NA	NA	NA
+63	dist_eff	0			NA			NA	NA	NA	NA	NA	NA	NA
+64	mean_imports	0			NA			NA	NA	NA	NA	NA	NA	NA
+65	others_tracing_eff	0			NA			NA	NA	NA	NA	NA	NA	NA
+66	school_tracing_eff	0			NA			NA	NA	NA	NA	NA	NA	NA
+67	home_tracing_eff	0			NA			NA	NA	NA	NA	NA	NA	NA
+68	work_tracing_eff	0			NA			NA	NA	NA	NA	NA	NA	NA
+69	quarantine_cov	0			NA			NA	NA	NA	NA	NA	NA	NA
+70	vaccine_eff	0			NA			NA	NA	NA	NA	NA	NA	NA
+71	vaccine_cov	0			NA			NA	NA	NA	NA	NA	NA	NA
+72	vaccine_campaign	1			NA			NA	NA	NA	NA	NA	NA	NA
+73	selfis_cov	0			NA			NA	NA	NA	NA	NA	NA	NA
+74	selfis_eff	0			NA			NA	NA	NA	NA	NA	NA	NA
+75	hand_eff	0			NA			NA	NA	NA	NA	NA	NA	NA
+76	travelban_eff	0			NA			NA	NA	NA	NA	NA	NA	NA
+77	tau_quarantine	2			NA			NA	NA	NA	NA	NA	NA	NA
+78	tau_testing	2			NA			NA	NA	NA	NA	NA	NA	NA
+79	tau_result	2			NA			NA	NA	NA	NA	NA	NA	NA
+80	tau_window	0			NA			NA	NA	NA	NA	NA	NA	NA
+81	pt_s	0			NA			NA	NA	NA	NA	NA	NA	NA
+82	pt_e	0			NA			NA	NA	NA	NA	NA	NA	NA
+83	pt_i	0			NA			NA	NA	NA	NA	NA	NA	NA
+84	pt_cl	0			NA			NA	NA	NA	NA	NA	NA	NA
+85	pt_hc	0			NA			NA	NA	NA	NA	NA	NA	NA
+86	pt_icuc	0			NA			NA	NA	NA	NA	NA	NA	NA
+87	pt_x	0			NA			NA	NA	NA	NA	NA	NA	NA
+88	pt_r	0			NA			NA	NA	NA	NA	NA	NA	NA
+89	pt_icuh	0			NA			NA	NA	NA	NA	NA	NA	NA
+90	pt_h	0			NA			NA	NA	NA	NA	NA	NA	NA
+91	pt_icu	0			NA			NA	NA	NA	NA	NA	NA	NA
+92	selfis_cov	0	70		NA			NA	NA	NA	NA	NA	NA	NA
+93	selfis_eff	0	80		NA			NA	NA	NA	NA	NA	NA	NA
+94	dist_cov	0	65		NA			NA	NA	NA	NA	NA	NA	NA
+95	dist_eff	0	95		NA			NA	NA	NA	NA	NA	NA	NA
+96	hand_eff	0	14		NA			NA	NA	NA	NA	NA	NA	NA
+97	work_cov	0	60		NA			NA	NA	NA	NA	NA	NA	NA
+98	work_eff	0	95		NA			NA	NA	NA	NA	NA	NA	NA
+99	w2h	0	0		NA			NA	NA	NA	NA	NA	NA	NA
+100	school_eff	0	95		NA			NA	NA	NA	NA	NA	NA	NA
+101	s2h	0	0		NA			NA	NA	NA	NA	NA	NA	NA
+102	cocoon_eff	0	95		NA			NA	NA	NA	NA	NA	NA	NA
+103	cocoon_cov	0	30		NA			NA	NA	NA	NA	NA	NA	NA
+104	age_cocoon	0	60		NA			NA	NA	NA	NA	NA	NA	NA
+105	vaccine_eff	0	0		NA			NA	NA	NA	NA	NA	NA	NA
+106	vaccine_cov	0	0		NA			NA	NA	NA	NA	NA	NA	NA
+107	vac_campaign	0	0		NA			NA	NA	NA	NA	NA	NA	NA
+108	mean_imports	0	0.2		NA			NA	NA	NA	NA	NA	NA	NA
+109	travelban_dur	0	50		NA			NA	NA	NA	NA	NA	NA	NA
+110	travelban_eff	0	70		NA			NA	NA	NA	NA	NA	NA	NA
+111	screen_dur	0	0		NA			NA	NA	NA	NA	NA	NA	NA
+112	screen_cov	0	0		NA			NA	NA	NA	NA	NA	NA	NA
+113	quarantine_cov	0	0		NA			NA	NA	NA	NA	NA	NA	NA
+114	quarantine_dur	0	0		NA			NA	NA	NA	NA	NA	NA	NA
+115	quarantine_days	14	14		NA			NA	NA	NA	NA	NA	NA	NA
+116	quarantine_eff_home	0	0		NA			NA	NA	NA	NA	NA	NA	NA
+117	quarantine_eff_other	0	0		NA			NA	NA	NA	NA	NA	NA	NA
